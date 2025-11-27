@@ -70,8 +70,8 @@ defmodule ElixirT1.MixProject do
 
   defp docs do
     [
-      main: "introduction", # The main page in the docs
-      extras: ["guides/introduction.md"]
+      main: "readme",
+      extras: ["README.md", "guides/introduction.md", "guides/advanced_features.md"]
     ]
   end
 
