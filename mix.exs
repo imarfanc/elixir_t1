@@ -71,7 +71,14 @@ defmodule ElixirT1.MixProject do
   defp docs do
     [
       main: "readme",
-      extras: ["README.md", "guides/introduction.md", "guides/advanced_features.md"]
+      extras: ["README.md", "guides/introduction.md", "guides/advanced_features.md", "guides/components.md"],
+      groups_for_extras: [
+        "Getting Started": ["guides/introduction.md"],
+        "Advanced Topics": ["guides/advanced_features.md", "guides/components.md"]
+      ],
+      # Hide API Reference and Modules
+      api_reference: false,
+      groups_for_modules: []
     ]
   end
 
