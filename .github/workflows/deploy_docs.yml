@@ -1,0 +1,21 @@
+name: Deploy Docs
+on:
+  push:
+    branches: ["main"]
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: "26.0"
+          elixir-version: "1.15"
+      - run: mix deps.get
+      - run: mix docs
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./doc
