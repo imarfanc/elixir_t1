@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="dist/html-elixir-ZFNMEJKT.css" />
 
-    <script defer src="dist/sidebar_items-3F3B89A5.js"></script>
+    <script defer src="dist/sidebar_items-14DA1AC4.js"></script>
     <script defer src="docs_config.js"></script>
     <script defer src="dist/html-HBZYRXZS.js"></script>
 
@@ -99,7 +99,7 @@ elixir_t1
 
 
 <h2 id="project-directory" class="section-heading"><a href="#project-directory" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Project Directory</span></h2><ul><li><code class="inline">assets</code> - Frontend assets (JavaScript, CSS, fonts, images) managed by Tailwind and Esbuild</li><li><code class="inline">config</code> - Application configuration files (dev, test, prod)</li><li><code class="inline">lib</code> - Application source code<ul><li><code class="inline">elixir_t1</code> - Core business logic and context modules</li><li><code class="inline">elixir_t1_web</code> - Web interface (Controllers, Views, LiveViews, Components)</li></ul></li><li><code class="inline">priv</code> - Private assets, including database migrations and static files served by Phoenix</li><li><code class="inline">test</code> - Application tests</li><li><code class="inline">mix.exs</code> - Project configuration and dependency management</li></ul><h2 id="github-pages-via-github-actions" class="section-heading"><a href="#github-pages-via-github-actions" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">GitHub Pages via GitHub Actions</span></h2><p>Since Phoenix is a dynamic application framework, GitHub Pages (which hosts static content) is typically used to host the project's <strong>documentation</strong>.</p><p>To deploy ExDoc documentation to GitHub Pages automatically:</p><ol><li><p> <strong>Add ExDoc dependency</strong>:
-Ensure <code class="inline">ex_doc</code> is listed in your <code class="inline">mix.exs</code> dependencies:</p><pre><code class="makeup elixir" translate="no"><span class="p" data-group-id="0695939295-1">{</span><span class="ss">:ex_doc</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;~&gt; 0.34&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">only</span><span class="p">:</span><span class="w"> </span><span class="ss">:dev</span><span class="p">,</span><span class="w"> </span><span class="ss">runtime</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p" data-group-id="0695939295-1">}</span></code></pre></li><li><p> <strong>Create a Workflow</strong>:
+Ensure <code class="inline">ex_doc</code> is listed in your <code class="inline">mix.exs</code> dependencies:</p><pre><code class="makeup elixir" translate="no"><span class="p" data-group-id="9402813072-1">{</span><span class="ss">:ex_doc</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;~&gt; 0.34&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">only</span><span class="p">:</span><span class="w"> </span><span class="ss">:dev</span><span class="p">,</span><span class="w"> </span><span class="ss">runtime</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p" data-group-id="9402813072-1">}</span></code></pre></li><li><p> <strong>Create a Workflow</strong>:
 Create a file at <code class="inline">.github/workflows/deploy_docs.yml</code> with the following content:</p><pre><code class="yaml">name: Deploy Docs
 on:
   push:

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.39.1">
+    <meta name="project" content="elixir_t1 v0.1.0">
+
+
+    <title>Components Library — elixir_t1 v0.1.0</title>
+
+    <link rel="stylesheet" href="dist/html-elixir-ZFNMEJKT.css" />
+
+    <script defer src="dist/sidebar_items-14DA1AC4.js"></script>
+    <script defer src="docs_config.js"></script>
+    <script defer src="dist/html-HBZYRXZS.js"></script>
+
+  </head>
+  <body>
+    <script>(()=>{var t="ex_doc:settings",e="dark";var o="dark",s="light";var E="sidebar_state",n="closed";var r="sidebar_width";var a="sidebar-open";var i=new URLSearchParams(window.location.search),S=i.get("theme")||JSON.parse(localStorage.getItem(t)||"{}").theme;(S===o||S!==s&&window.matchMedia("(prefers-color-scheme: dark)").matches)&&document.body.classList.add(e);var d=sessionStorage.getItem(E),A=d!==n&&!window.matchMedia(`screen and (max-width: ${768}px)`).matches;document.body.classList.toggle(a,A);var c=sessionStorage.getItem(r);c&&document.body.style.setProperty("--sidebarWidth",`${c}px`);var p=/(Macintosh|iPhone|iPad|iPod)/.test(window.navigator.userAgent);document.documentElement.classList.toggle("apple-os",p);})();
+</script>
+
+<div class="body-wrapper">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+      <div>
+        <a href="readme.html" class="sidebar-projectName" translate="no">
+elixir_t1
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.1.0
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-list-nav" class="sidebar-list-nav" role="tablist" data-extras=""></ul>
+  </div>
+</nav>
+
+<output role="status" id="toast"></output>
+
+<main class="content page-extra" id="main" data-type="extras">
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of elixir_t1</span>
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
+          </label>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <div class="heading-with-actions top-heading">
+    <h1>Components Library</h1>
+
+
+  </div>
+
+
+<p>This page showcases various UI components and patterns used throughout the application.</p><h2 id="interactive-card-component" class="section-heading"><a href="#interactive-card-component" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Interactive Card Component</span></h2><p>Here's an advanced card component with hover effects and animations:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">ElixirT1Web.Components.Card</span><span class="w"> </span><span class="k" data-group-id="4502013368-1">do</span><span class="w">
+  </span><span class="kn">use</span><span class="w"> </span><span class="nc">Phoenix.Component</span><span class="w">
+
+  </span><span class="na">@doc</span><span class="w"> </span><span class="s">&quot;&quot;&quot;
+  Renders an interactive card with optional image, title, and actions.
+
+  ## Examples
+
+      &lt;.card title=&quot;Welcome&quot; image=&quot;/images/hero.jpg&quot;&gt;
+        &lt;p&gt;This is the card content&lt;/p&gt;
+        &lt;:actions&gt;
+          &lt;.button&gt;Learn More&lt;/.button&gt;
+        &lt;/:actions&gt;
+      &lt;/.card&gt;
+  &quot;&quot;&quot;</span><span class="w">
+  </span><span class="n">attr</span><span class="w"> </span><span class="ss">:title</span><span class="p">,</span><span class="w"> </span><span class="ss">:string</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="w">
+  </span><span class="n">attr</span><span class="w"> </span><span class="ss">:image</span><span class="p">,</span><span class="w"> </span><span class="ss">:string</span><span class="p">,</span><span class="w"> </span><span class="ss">default</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="w">
+  </span><span class="n">attr</span><span class="w"> </span><span class="ss">:class</span><span class="p">,</span><span class="w"> </span><span class="ss">:string</span><span class="p">,</span><span class="w"> </span><span class="ss">default</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="w">
+  
+  </span><span class="n">slot</span><span class="w"> </span><span class="ss">:inner_block</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="w">
+  </span><span class="n">slot</span><span class="w"> </span><span class="ss">:actions</span><span class="w">
+
+  </span><span class="kd">def</span><span class="w"> </span><span class="nf">card</span><span class="p" data-group-id="4502013368-2">(</span><span class="n">assigns</span><span class="p" data-group-id="4502013368-2">)</span><span class="w"> </span><span class="k" data-group-id="4502013368-3">do</span><span class="w">
+    </span><span class="sx">~H&quot;&quot;&quot;
+    &lt;div class={[
+      &quot;group relative overflow-hidden rounded-2xl bg-white shadow-lg&quot;,
+      &quot;transition-all duration-300 hover:shadow-2xl hover:-translate-y-1&quot;,
+      @class
+    ]}&gt;
+      &lt;%= if @image do %&gt;
+        &lt;div class=&quot;aspect-video overflow-hidden&quot;&gt;
+          &lt;img 
+            src={@image} 
+            alt={@title}
+            class=&quot;w-full h-full object-cover transition-transform duration-300 group-hover:scale-110&quot;
+          /&gt;
+        &lt;/div&gt;
+      &lt;% end %&gt;
+      
+      &lt;div class=&quot;p-6&quot;&gt;
+        &lt;h3 class=&quot;text-2xl font-bold text-gray-900 mb-4&quot;&gt;
+          {@title}
+        &lt;/h3&gt;
+        
+        &lt;div class=&quot;text-gray-600 space-y-3&quot;&gt;
+          &lt;%= render_slot(@inner_block) %&gt;
+        &lt;/div&gt;
+        
+        &lt;%= if @actions != [] do %&gt;
+          &lt;div class=&quot;mt-6 flex gap-3&quot;&gt;
+            &lt;%= render_slot(@actions) %&gt;
+          &lt;/div&gt;
+        &lt;% end %&gt;
+      &lt;/div&gt;
+      
+      &lt;!-- Decorative gradient overlay --&gt;
+      &lt;div class=&quot;absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 
+                  group-hover:from-blue-500/5 group-hover:to-purple-500/5 
+                  transition-all duration-300 pointer-events-none&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &quot;&quot;&quot;</span><span class="w">
+  </span><span class="k" data-group-id="4502013368-3">end</span><span class="w">
+</span><span class="k" data-group-id="4502013368-1">end</span></code></pre><h2 id="modal-component" class="section-heading"><a href="#modal-component" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Modal Component</span></h2><p>A fully accessible modal dialog with backdrop:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">ElixirT1Web.Components.Modal</span><span class="w"> </span><span class="k" data-group-id="2057184000-1">do</span><span class="w">
+  </span><span class="kn">use</span><span class="w"> </span><span class="nc">Phoenix.Component</span><span class="w">
+  </span><span class="kn">import</span><span class="w"> </span><span class="nc">Phoenix.LiveView</span><span class="w">
+
+  </span><span class="n">attr</span><span class="w"> </span><span class="ss">:id</span><span class="p">,</span><span class="w"> </span><span class="ss">:string</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="w">
+  </span><span class="n">attr</span><span class="w"> </span><span class="ss">:show</span><span class="p">,</span><span class="w"> </span><span class="ss">:boolean</span><span class="p">,</span><span class="w"> </span><span class="ss">default</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="w">
+  </span><span class="n">attr</span><span class="w"> </span><span class="ss">:on_cancel</span><span class="p">,</span><span class="w"> </span><span class="nc">JS</span><span class="p">,</span><span class="w"> </span><span class="ss">default</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2057184000-2">%</span><span class="nc" data-group-id="2057184000-2">JS</span><span class="p" data-group-id="2057184000-2">{</span><span class="p" data-group-id="2057184000-2">}</span><span class="w">
+  
+  </span><span class="n">slot</span><span class="w"> </span><span class="ss">:inner_block</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="w">
+  </span><span class="n">slot</span><span class="w"> </span><span class="ss">:title</span><span class="w">
+  </span><span class="n">slot</span><span class="w"> </span><span class="ss">:footer</span><span class="w">
+
+  </span><span class="kd">def</span><span class="w"> </span><span class="nf">modal</span><span class="p" data-group-id="2057184000-3">(</span><span class="n">assigns</span><span class="p" data-group-id="2057184000-3">)</span><span class="w"> </span><span class="k" data-group-id="2057184000-4">do</span><span class="w">
+    </span><span class="sx">~H&quot;&quot;&quot;
+    &lt;div
+      id={@id}
+      phx-mounted={@show &amp;&amp; show_modal(@id)}
+      phx-remove={hide_modal(@id)}
+      class=&quot;relative z-50 hidden&quot;
+    &gt;
+      &lt;!-- Backdrop --&gt;
+      &lt;div 
+        id={&quot;#{@id}-backdrop&quot;}
+        class=&quot;fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity&quot;
+        aria-hidden=&quot;true&quot;
+      /&gt;
+      
+      &lt;!-- Modal panel --&gt;
+      &lt;div class=&quot;fixed inset-0 overflow-y-auto&quot;&gt;
+        &lt;div class=&quot;flex min-h-full items-center justify-center p-4&quot;&gt;
+          &lt;div
+            id={&quot;#{@id}-panel&quot;}
+            class=&quot;relative max-w-2xl w-full bg-white rounded-2xl shadow-2xl 
+                   transform transition-all&quot;
+          &gt;
+            &lt;!-- Header --&gt;
+            &lt;%= if @title != [] do %&gt;
+              &lt;div class=&quot;px-6 py-4 border-b border-gray-200&quot;&gt;
+                &lt;h2 class=&quot;text-xl font-semibold text-gray-900&quot;&gt;
+                  &lt;%= render_slot(@title) %&gt;
+                &lt;/h2&gt;
+              &lt;/div&gt;
+            &lt;% end %&gt;
+            
+            &lt;!-- Content --&gt;
+            &lt;div class=&quot;px-6 py-4&quot;&gt;
+              &lt;%= render_slot(@inner_block) %&gt;
+            &lt;/div&gt;
+            
+            &lt;!-- Footer --&gt;
+            &lt;%= if @footer != [] do %&gt;
+              &lt;div class=&quot;px-6 py-4 border-t border-gray-200 flex justify-end gap-3&quot;&gt;
+                &lt;%= render_slot(@footer) %&gt;
+              &lt;/div&gt;
+            &lt;% end %&gt;
+            
+            &lt;!-- Close button --&gt;
+            &lt;button
+              phx-click={@on_cancel}
+              type=&quot;button&quot;
+              class=&quot;absolute top-4 right-4 text-gray-400 hover:text-gray-600&quot;
+              aria-label=&quot;Close&quot;
+            &gt;
+              &lt;svg class=&quot;w-6 h-6&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke=&quot;currentColor&quot;&gt;
+                &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M6 18L18 6M6 6l12 12&quot; /&gt;
+              &lt;/svg&gt;
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &quot;&quot;&quot;</span><span class="w">
+  </span><span class="k" data-group-id="2057184000-4">end</span><span class="w">
+
+  </span><span class="kd">defp</span><span class="w"> </span><span class="nf">show_modal</span><span class="p" data-group-id="2057184000-5">(</span><span class="n">id</span><span class="p" data-group-id="2057184000-5">)</span><span class="w"> </span><span class="k" data-group-id="2057184000-6">do</span><span class="w">
+    </span><span class="p" data-group-id="2057184000-7">%</span><span class="nc" data-group-id="2057184000-7">JS</span><span class="p" data-group-id="2057184000-7">{</span><span class="p" data-group-id="2057184000-7">}</span><span class="w">
+    </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">JS</span><span class="o">.</span><span class="n">show</span><span class="p" data-group-id="2057184000-8">(</span><span class="ss">to</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;#</span><span class="si" data-group-id="2057184000-9">#{</span><span class="n">id</span><span class="si" data-group-id="2057184000-9">}</span><span class="s">&quot;</span><span class="p" data-group-id="2057184000-8">)</span><span class="w">
+    </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">JS</span><span class="o">.</span><span class="n">show</span><span class="p" data-group-id="2057184000-10">(</span><span class="w">
+      </span><span class="ss">to</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;#</span><span class="si" data-group-id="2057184000-11">#{</span><span class="n">id</span><span class="si" data-group-id="2057184000-11">}</span><span class="s">-backdrop&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="ss">transition</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2057184000-12">{</span><span class="s">&quot;transition-opacity ease-out duration-300&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;opacity-0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;opacity-100&quot;</span><span class="p" data-group-id="2057184000-12">}</span><span class="w">
+    </span><span class="p" data-group-id="2057184000-10">)</span><span class="w">
+    </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">JS</span><span class="o">.</span><span class="n">show</span><span class="p" data-group-id="2057184000-13">(</span><span class="w">
+      </span><span class="ss">to</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;#</span><span class="si" data-group-id="2057184000-14">#{</span><span class="n">id</span><span class="si" data-group-id="2057184000-14">}</span><span class="s">-panel&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="ss">transition</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2057184000-15">{</span><span class="s">&quot;transition-all ease-out duration-300&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;opacity-0 scale-95&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;opacity-100 scale-100&quot;</span><span class="p" data-group-id="2057184000-15">}</span><span class="w">
+    </span><span class="p" data-group-id="2057184000-13">)</span><span class="w">
+  </span><span class="k" data-group-id="2057184000-6">end</span><span class="w">
+
+  </span><span class="kd">defp</span><span class="w"> </span><span class="nf">hide_modal</span><span class="p" data-group-id="2057184000-16">(</span><span class="n">id</span><span class="p" data-group-id="2057184000-16">)</span><span class="w"> </span><span class="k" data-group-id="2057184000-17">do</span><span class="w">
+    </span><span class="p" data-group-id="2057184000-18">%</span><span class="nc" data-group-id="2057184000-18">JS</span><span class="p" data-group-id="2057184000-18">{</span><span class="p" data-group-id="2057184000-18">}</span><span class="w">
+    </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">JS</span><span class="o">.</span><span class="n">hide</span><span class="p" data-group-id="2057184000-19">(</span><span class="w">
+      </span><span class="ss">to</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;#</span><span class="si" data-group-id="2057184000-20">#{</span><span class="n">id</span><span class="si" data-group-id="2057184000-20">}</span><span class="s">-backdrop&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="ss">transition</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2057184000-21">{</span><span class="s">&quot;transition-opacity ease-in duration-200&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;opacity-100&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;opacity-0&quot;</span><span class="p" data-group-id="2057184000-21">}</span><span class="w">
+    </span><span class="p" data-group-id="2057184000-19">)</span><span class="w">
+    </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">JS</span><span class="o">.</span><span class="n">hide</span><span class="p" data-group-id="2057184000-22">(</span><span class="w">
+      </span><span class="ss">to</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;#</span><span class="si" data-group-id="2057184000-23">#{</span><span class="n">id</span><span class="si" data-group-id="2057184000-23">}</span><span class="s">-panel&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="ss">transition</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2057184000-24">{</span><span class="s">&quot;transition-all ease-in duration-200&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;opacity-100 scale-100&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;opacity-0 scale-95&quot;</span><span class="p" data-group-id="2057184000-24">}</span><span class="w">
+    </span><span class="p" data-group-id="2057184000-22">)</span><span class="w">
+    </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">JS</span><span class="o">.</span><span class="n">hide</span><span class="p" data-group-id="2057184000-25">(</span><span class="ss">to</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;#</span><span class="si" data-group-id="2057184000-26">#{</span><span class="n">id</span><span class="si" data-group-id="2057184000-26">}</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">transition</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2057184000-27">{</span><span class="s">&quot;block&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;block&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;hidden&quot;</span><span class="p" data-group-id="2057184000-27">}</span><span class="p" data-group-id="2057184000-25">)</span><span class="w">
+  </span><span class="k" data-group-id="2057184000-17">end</span><span class="w">
+</span><span class="k" data-group-id="2057184000-1">end</span></code></pre><h2 id="usage-examples" class="section-heading"><a href="#usage-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Usage Examples</span></h2><h3 id="card-component-in-action" class="section-heading"><a href="#card-component-in-action" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Card Component in Action</span></h3><pre><code class="makeup elixir" translate="no"><span class="o">&lt;</span><span class="o">.</span><span class="n">card</span><span class="w"> </span><span class="n">title</span><span class="o">=</span><span class="s">&quot;Phoenix LiveView&quot;</span><span class="w"> </span><span class="n">image</span><span class="o">=</span><span class="s">&quot;/images/phoenix.jpg&quot;</span><span class="o">&gt;</span><span class="w">
+  </span><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="nc">Build</span><span class="w"> </span><span class="n">rich</span><span class="p">,</span><span class="w"> </span><span class="n">real</span><span class="o">-</span><span class="n">time</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="n">experiences</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">server</span><span class="o">-</span><span class="n">rendered</span><span class="w"> </span><span class="nc">HTML</span><span class="o">.</span><span class="o">&lt;</span><span class="o">/</span><span class="n">p</span><span class="o">&gt;</span><span class="w">
+  </span><span class="o">&lt;</span><span class="n">p</span><span class="w"> </span><span class="n">class</span><span class="o">=</span><span class="s">&quot;text-sm text-gray-500&quot;</span><span class="o">&gt;</span><span class="nc">No</span><span class="w"> </span><span class="nc">JavaScript</span><span class="w"> </span><span class="n">framework</span><span class="w"> </span><span class="n">needed!</span><span class="o">&lt;</span><span class="o">/</span><span class="n">p</span><span class="o">&gt;</span><span class="w">
+  
+  </span><span class="o">&lt;</span><span class="ss">:actions</span><span class="o">&gt;</span><span class="w">
+    </span><span class="o">&lt;</span><span class="o">.</span><span class="n">button</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="o">&gt;</span><span class="nc">Get</span><span class="w"> </span><span class="nc">Started</span><span class="o">&lt;</span><span class="o">/</span><span class="o">.</span><span class="n">button</span><span class="o">&gt;</span><span class="w">
+    </span><span class="o">&lt;</span><span class="o">.</span><span class="n">button</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="w"> </span><span class="n">class</span><span class="o">=</span><span class="s">&quot;bg-gray-200 text-gray-800&quot;</span><span class="o">&gt;</span><span class="nc">Learn</span><span class="w"> </span><span class="nc">More</span><span class="o">&lt;</span><span class="o">/</span><span class="o">.</span><span class="n">button</span><span class="o">&gt;</span><span class="w">
+  </span><span class="o">&lt;</span><span class="o">/</span><span class="ss">:actions</span><span class="o">&gt;</span><span class="w">
+</span><span class="o">&lt;</span><span class="o">/</span><span class="o">.</span><span class="n">card</span><span class="o">&gt;</span></code></pre><h3 id="modal-component-in-action" class="section-heading"><a href="#modal-component-in-action" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Modal Component in Action</span></h3><pre><code class="makeup elixir" translate="no"><span class="o">&lt;</span><span class="o">.</span><span class="n">modal</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;confirm-modal&quot;</span><span class="w"> </span><span class="n">show</span><span class="o">=</span><span class="p" data-group-id="7527855887-1">{</span><span class="na">@show_modal</span><span class="p" data-group-id="7527855887-1">}</span><span class="w"> </span><span class="n">on_cancel</span><span class="o">=</span><span class="p" data-group-id="7527855887-2">{</span><span class="nc">JS</span><span class="o">.</span><span class="n">push</span><span class="p" data-group-id="7527855887-3">(</span><span class="s">&quot;close_modal&quot;</span><span class="p" data-group-id="7527855887-3">)</span><span class="p" data-group-id="7527855887-2">}</span><span class="o">&gt;</span><span class="w">
+  </span><span class="o">&lt;</span><span class="ss">:title</span><span class="o">&gt;</span><span class="nc">Confirm</span><span class="w"> </span><span class="nc">Action</span><span class="o">&lt;</span><span class="o">/</span><span class="ss">:title</span><span class="o">&gt;</span><span class="w">
+  
+  </span><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="nc">Are</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">sure</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">want</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">proceed</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">action?</span><span class="o">&lt;</span><span class="o">/</span><span class="n">p</span><span class="o">&gt;</span><span class="w">
+  
+  </span><span class="o">&lt;</span><span class="ss">:footer</span><span class="o">&gt;</span><span class="w">
+    </span><span class="o">&lt;</span><span class="o">.</span><span class="n">button</span><span class="w"> </span><span class="n">phx</span><span class="o">-</span><span class="n">click</span><span class="o">=</span><span class="s">&quot;close_modal&quot;</span><span class="w"> </span><span class="n">class</span><span class="o">=</span><span class="s">&quot;bg-gray-200 text-gray-800&quot;</span><span class="o">&gt;</span><span class="w">
+      </span><span class="nc">Cancel</span><span class="w">
+    </span><span class="o">&lt;</span><span class="o">/</span><span class="o">.</span><span class="n">button</span><span class="o">&gt;</span><span class="w">
+    </span><span class="o">&lt;</span><span class="o">.</span><span class="n">button</span><span class="w"> </span><span class="n">phx</span><span class="o">-</span><span class="n">click</span><span class="o">=</span><span class="s">&quot;confirm&quot;</span><span class="w"> </span><span class="n">class</span><span class="o">=</span><span class="s">&quot;bg-red-600 hover:bg-red-700&quot;</span><span class="o">&gt;</span><span class="w">
+      </span><span class="nc">Confirm</span><span class="w">
+    </span><span class="o">&lt;</span><span class="o">/</span><span class="o">.</span><span class="n">button</span><span class="o">&gt;</span><span class="w">
+  </span><span class="o">&lt;</span><span class="o">/</span><span class="ss">:footer</span><span class="o">&gt;</span><span class="w">
+</span><span class="o">&lt;</span><span class="o">/</span><span class="o">.</span><span class="n">modal</span><span class="o">&gt;</span></code></pre><h2 id="component-best-practices" class="section-heading"><a href="#component-best-practices" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Component Best Practices</span></h2><ol><li><strong>Always use slots</strong> for flexible content composition</li><li><strong>Provide sensible defaults</strong> for optional attributes</li><li><strong>Include documentation</strong> with <code class="inline">@doc</code> and examples</li><li><strong>Use Tailwind classes</strong> for consistent styling</li><li><strong>Add transitions</strong> for smooth user interactions</li><li><strong>Make components accessible</strong> with proper ARIA attributes</li></ol>
+
+</div>
+
+<div class="bottom-actions" id="bottom-actions">
+  <div class="bottom-actions-item">
+
+      <a href="advanced_features.html" class="bottom-actions-button" rel="prev">
+        <span class="subheader">
+          ← Previous Page
+        </span>
+        <span class="title">
+Advanced Features
+        </span>
+      </a>
+
+  </div>
+  <div class="bottom-actions-item">
+
+  </div>
+</div>
+    <footer class="footer">
+      <p>
+
+        <span class="line">
+          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+            Search HexDocs
+          </button>
+
+            <a href="elixir_t1.epub" title="ePub version">
+              Download ePub version
+            </a>
+
+        </span>
+      </p>
+
+      <p class="built-using">
+        Built using
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.1) for the
+
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+      </p>
+
+    </footer>
+  </div>
+</main>
+</div>
+
+  </body>
+</html>

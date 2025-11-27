@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="dist/html-elixir-ZFNMEJKT.css" />
 
-    <script defer src="dist/sidebar_items-3F3B89A5.js"></script>
+    <script defer src="dist/sidebar_items-14DA1AC4.js"></script>
     <script defer src="docs_config.js"></script>
     <script defer src="dist/html-HBZYRXZS.js"></script>
 
@@ -98,7 +98,7 @@ elixir_t1
   </div>
 
 
-<p>This guide demonstrates more complex features of our application and how to document them effectively using ExDoc.</p><h2 id="liveview-components" class="section-heading"><a href="#liveview-components" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">LiveView Components</span></h2><p>We use Phoenix LiveView for real-time interactivity. Here is an example of a functional component:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">ElixirT1Web.CoreComponents</span><span class="w"> </span><span class="k" data-group-id="5221230420-1">do</span><span class="w">
+<p>This guide demonstrates more complex features of our application and how to document them effectively using ExDoc.</p><h2 id="liveview-components" class="section-heading"><a href="#liveview-components" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">LiveView Components</span></h2><p>We use Phoenix LiveView for real-time interactivity. Here is an example of a functional component:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">ElixirT1Web.CoreComponents</span><span class="w"> </span><span class="k" data-group-id="2095384182-1">do</span><span class="w">
   </span><span class="kn">use</span><span class="w"> </span><span class="nc">Phoenix.Component</span><span class="w">
 
   </span><span class="na">@doc</span><span class="w"> </span><span class="s">&quot;&quot;&quot;
@@ -108,7 +108,7 @@ elixir_t1
   </span><span class="n">attr</span><span class="w"> </span><span class="ss">:class</span><span class="p">,</span><span class="w"> </span><span class="ss">:string</span><span class="p">,</span><span class="w"> </span><span class="ss">default</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="w">
   </span><span class="n">slot</span><span class="w"> </span><span class="ss">:inner_block</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="w">
 
-  </span><span class="kd">def</span><span class="w"> </span><span class="nf">button</span><span class="p" data-group-id="5221230420-2">(</span><span class="n">assigns</span><span class="p" data-group-id="5221230420-2">)</span><span class="w"> </span><span class="k" data-group-id="5221230420-3">do</span><span class="w">
+  </span><span class="kd">def</span><span class="w"> </span><span class="nf">button</span><span class="p" data-group-id="2095384182-2">(</span><span class="n">assigns</span><span class="p" data-group-id="2095384182-2">)</span><span class="w"> </span><span class="k" data-group-id="2095384182-3">do</span><span class="w">
     </span><span class="sx">~H&quot;&quot;&quot;
     &lt;button
       type={@type}
@@ -121,8 +121,8 @@ elixir_t1
       &lt;%= render_slot(@inner_block) %&gt;
     &lt;/button&gt;
     &quot;&quot;&quot;</span><span class="w">
-  </span><span class="k" data-group-id="5221230420-3">end</span><span class="w">
-</span><span class="k" data-group-id="5221230420-1">end</span></code></pre><h2 id="data-structures" class="section-heading"><a href="#data-structures" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Data Structures</span></h2><p>Here is a breakdown of the user data structure:</p><table><thead><tr><th style="text-align: left;">Field</th><th style="text-align: left;">Type</th><th style="text-align: left;">Description</th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">id</code></td><td style="text-align: left;"><code class="inline">integer</code></td><td style="text-align: left;">Unique identifier</td></tr><tr><td style="text-align: left;"><code class="inline">email</code></td><td style="text-align: left;"><code class="inline">string</code></td><td style="text-align: left;">User's email address</td></tr><tr><td style="text-align: left;"><code class="inline">inserted_at</code></td><td style="text-align: left;"><code class="inline">datetime</code></td><td style="text-align: left;">Creation timestamp</td></tr></tbody></table><h2 id="important-notes" class="section-heading"><a href="#important-notes" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Important Notes</span></h2><blockquote><p>[!INFO]
+  </span><span class="k" data-group-id="2095384182-3">end</span><span class="w">
+</span><span class="k" data-group-id="2095384182-1">end</span></code></pre><h2 id="data-structures" class="section-heading"><a href="#data-structures" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Data Structures</span></h2><p>Here is a breakdown of the user data structure:</p><table><thead><tr><th style="text-align: left;">Field</th><th style="text-align: left;">Type</th><th style="text-align: left;">Description</th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">id</code></td><td style="text-align: left;"><code class="inline">integer</code></td><td style="text-align: left;">Unique identifier</td></tr><tr><td style="text-align: left;"><code class="inline">email</code></td><td style="text-align: left;"><code class="inline">string</code></td><td style="text-align: left;">User's email address</td></tr><tr><td style="text-align: left;"><code class="inline">inserted_at</code></td><td style="text-align: left;"><code class="inline">datetime</code></td><td style="text-align: left;">Creation timestamp</td></tr></tbody></table><h2 id="important-notes" class="section-heading"><a href="#important-notes" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Important Notes</span></h2><blockquote><p>[!INFO]
 Remember to always validate user input before processing it.</p></blockquote><blockquote><p>[!WARNING]
 This is a warning block. Be careful when handling sensitive data.</p></blockquote><h2 id="mermaid-diagrams" class="section-heading"><a href="#mermaid-diagrams" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Mermaid Diagrams</span></h2><p>ExDoc supports Mermaid diagrams for visualizing flows:</p><pre><code class="mermaid">graph TD;
   A[User] --&gt;|Request| B(Load Balancer);
@@ -146,6 +146,15 @@ Introduction
 
   </div>
   <div class="bottom-actions-item">
+
+      <a href="components.html" class="bottom-actions-button" rel="next">
+        <span class="subheader">
+          Next Page →
+        </span>
+        <span class="title">
+Components Library
+        </span>
+      </a>
 
   </div>
 </div>
