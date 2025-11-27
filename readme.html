@@ -8,7 +8,7 @@
     <meta name="project" content="elixir_t1 v0.1.0">
 
 
-    <title>ElixirT1Web.ErrorHTML — elixir_t1 v0.1.0</title>
+    <title>ElixirT1 — elixir_t1 v0.1.0</title>
 
     <link rel="stylesheet" href="dist/html-elixir-ZFNMEJKT.css" />
 
@@ -47,7 +47,7 @@ elixir_t1
 
 <output role="status" id="toast"></output>
 
-<main class="content page-module" id="main" data-type="modules">
+<main class="content page-extra" id="main" data-type="extras">
   <div id="content" class="content-inner">
     <div class="top-search">
       <div class="search-settings">
@@ -92,77 +92,55 @@ elixir_t1
 
 <div id="top-content">
   <div class="heading-with-actions top-heading">
-    <h1>
-      <span translate="no">ElixirT1Web.ErrorHTML</span> 
-      <small class="app-vsn" translate="no">(elixir_t1 v0.1.0)</small>
+    <h1>ElixirT1</h1>
 
-    </h1>
 
   </div>
 
 
-    <section id="moduledoc">
-<p>This module is invoked by your endpoint in case of errors on HTML requests.</p><p>See config/config.exs.</p>
-    </section>
+<h2 id="project-directory" class="section-heading"><a href="#project-directory" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Project Directory</span></h2><ul><li><code class="inline">assets</code> - Frontend assets (JavaScript, CSS, fonts, images) managed by Tailwind and Esbuild</li><li><code class="inline">config</code> - Application configuration files (dev, test, prod)</li><li><code class="inline">lib</code> - Application source code<ul><li><code class="inline">elixir_t1</code> - Core business logic and context modules</li><li><code class="inline">elixir_t1_web</code> - Web interface (Controllers, Views, LiveViews, Components)</li></ul></li><li><code class="inline">priv</code> - Private assets, including database migrations and static files served by Phoenix</li><li><code class="inline">test</code> - Application tests</li><li><code class="inline">mix.exs</code> - Project configuration and dependency management</li></ul><h2 id="github-pages-via-github-actions" class="section-heading"><a href="#github-pages-via-github-actions" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">GitHub Pages via GitHub Actions</span></h2><p>Since Phoenix is a dynamic application framework, GitHub Pages (which hosts static content) is typically used to host the project's <strong>documentation</strong>.</p><p>To deploy ExDoc documentation to GitHub Pages automatically:</p><ol><li><p> <strong>Add ExDoc dependency</strong>:
+Ensure <code class="inline">ex_doc</code> is listed in your <code class="inline">mix.exs</code> dependencies:</p><pre><code class="makeup elixir" translate="no"><span class="p" data-group-id="0695939295-1">{</span><span class="ss">:ex_doc</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;~&gt; 0.34&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">only</span><span class="p">:</span><span class="w"> </span><span class="ss">:dev</span><span class="p">,</span><span class="w"> </span><span class="ss">runtime</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="p" data-group-id="0695939295-1">}</span></code></pre></li><li><p> <strong>Create a Workflow</strong>:
+Create a file at <code class="inline">.github/workflows/deploy_docs.yml</code> with the following content:</p><pre><code class="yaml">name: Deploy Docs
+on:
+  push:
+    branches: [&quot;main&quot;]
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: &quot;26.0&quot;
+          elixir-version: &quot;1.15&quot;
+      - run: mix deps.get
+      - run: mix docs
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./doc</code></pre></li><li><p> <strong>Configure Repository</strong>:</p><ul><li>  Go to your repository <strong>Settings</strong> &gt; <strong>Pages</strong>.</li><li>  Under <strong>Build and deployment</strong>, select <strong>Deploy from a branch</strong>.</li><li>  Select <code class="inline">gh-pages</code> as the branch (this branch will be created by the action).</li></ul></li></ol><h2 id="local" class="section-heading"><a href="#local" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">local</span></h2><p>To start your Phoenix server:</p><ul><li>Run <code class="inline">mix setup</code> to install and setup dependencies</li><li>Start Phoenix endpoint with <a href="https://hexdocs.pm/phoenix/1.8.2/Mix.Tasks.Phx.Server.html"><code class="inline">mix phx.server</code></a> or inside IEx with <code class="inline">iex -S mix phx.server</code></li></ul><p>Now you can visit <a href="http://localhost:4000"><code class="inline">localhost:4000</code></a> from your browser.</p>
 
 </div>
 
-  <section id="summary" class="details-list">
-    <h1 class="section-heading">
-      <a class="hover-link" href="#summary">
-        <i class="ri-link-m" aria-hidden="true"></i>
-      </a>
-      <span class="text">Summary</span>
-    </h1>
-<div class="summary-functions summary">
-  <h2>
-    <a href="#functions">Functions</a>
-  </h2>
+<div class="bottom-actions" id="bottom-actions">
+  <div class="bottom-actions-item">
 
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#render/2" data-no-tooltip="" translate="no">render(template, assigns)</a>
-
-      </div>
-
-    </div>
-
-</div>
-
-  </section>
-
-
-  <section id="functions" class="details-list">
-    <h1 class="section-heading">
-      <a class="hover-link" href="#functions">
-        <i class="ri-link-m" aria-hidden="true"></i>
-      </a>
-      <span class="text">Functions</span>
-    </h1>
-
-    <div class="functions-list">
-<section class="detail" id="render/2">
-
-  <div class="detail-header">
-    <a href="#render/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-    </a>
-    <div class="heading-with-actions">
-      <h1 class="signature" translate="no">render(template, assigns)</h1>
-
-
-    </div>
   </div>
+  <div class="bottom-actions-item">
 
-  <section class="docstring">
+      <a href="introduction.html" class="bottom-actions-button" rel="next">
+        <span class="subheader">
+          Next Page →
+        </span>
+        <span class="title">
+Introduction
+        </span>
+      </a>
 
-
-  </section>
-</section>
-
-    </div>
-  </section>
-
+  </div>
+</div>
     <footer class="footer">
       <p>
 

@@ -8,7 +8,7 @@
     <meta name="project" content="elixir_t1 v0.1.0">
 
 
-    <title>Introduction — elixir_t1 v0.1.0</title>
+    <title>Advanced Features — elixir_t1 v0.1.0</title>
 
     <link rel="stylesheet" href="dist/html-elixir-ZFNMEJKT.css" />
 
@@ -92,39 +92,60 @@ elixir_t1
 
 <div id="top-content">
   <div class="heading-with-actions top-heading">
-    <h1>Introduction</h1>
+    <h1>Advanced Features</h1>
 
 
   </div>
 
 
-<p>Welcome to the ElixirT1 documentation!</p><p>This project is a Phoenix application designed to demonstrate best practices and modern web development techniques with Elixir.</p><h2 id="getting-started" class="section-heading"><a href="#getting-started" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Getting Started</span></h2><p>To get started with the project, make sure you have Elixir and Erlang installed.</p><ol><li> Clone the repository.</li><li> Run <code class="inline">mix setup</code> to install dependencies.</li><li> Start the server with <a href="https://hexdocs.pm/phoenix/1.8.2/Mix.Tasks.Phx.Server.html"><code class="inline">mix phx.server</code></a>.</li></ol><h2 id="features" class="section-heading"><a href="#features" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Features</span></h2><ul><li>  <strong>Phoenix LiveView</strong>: Real-time interactive UI without writing custom JavaScript.</li><li>  <strong>Tailwind CSS</strong>: Utility-first CSS framework for rapid UI development.</li><li>  <strong>ExDoc</strong>: Documentation generation for Elixir projects.</li></ul><h2 id="contributing" class="section-heading"><a href="#contributing" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Contributing</span></h2><p>We welcome contributions! Please see the <code class="inline">CONTRIBUTING.md</code> file for more details.</p>
+<p>This guide demonstrates more complex features of our application and how to document them effectively using ExDoc.</p><h2 id="liveview-components" class="section-heading"><a href="#liveview-components" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">LiveView Components</span></h2><p>We use Phoenix LiveView for real-time interactivity. Here is an example of a functional component:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">ElixirT1Web.CoreComponents</span><span class="w"> </span><span class="k" data-group-id="5221230420-1">do</span><span class="w">
+  </span><span class="kn">use</span><span class="w"> </span><span class="nc">Phoenix.Component</span><span class="w">
+
+  </span><span class="na">@doc</span><span class="w"> </span><span class="s">&quot;&quot;&quot;
+  Renders a simple button.
+  &quot;&quot;&quot;</span><span class="w">
+  </span><span class="n">attr</span><span class="w"> </span><span class="ss">:type</span><span class="p">,</span><span class="w"> </span><span class="ss">:string</span><span class="p">,</span><span class="w"> </span><span class="ss">default</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;button&quot;</span><span class="w">
+  </span><span class="n">attr</span><span class="w"> </span><span class="ss">:class</span><span class="p">,</span><span class="w"> </span><span class="ss">:string</span><span class="p">,</span><span class="w"> </span><span class="ss">default</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="w">
+  </span><span class="n">slot</span><span class="w"> </span><span class="ss">:inner_block</span><span class="p">,</span><span class="w"> </span><span class="ss">required</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="w">
+
+  </span><span class="kd">def</span><span class="w"> </span><span class="nf">button</span><span class="p" data-group-id="5221230420-2">(</span><span class="n">assigns</span><span class="p" data-group-id="5221230420-2">)</span><span class="w"> </span><span class="k" data-group-id="5221230420-3">do</span><span class="w">
+    </span><span class="sx">~H&quot;&quot;&quot;
+    &lt;button
+      type={@type}
+      class={[
+        &quot;phx-submit-loading:opacity-75 rounded-lg bg-zinc-900 hover:bg-zinc-700 py-2 px-3&quot;,
+        &quot;text-sm font-semibold leading-6 text-white active:text-white/80&quot;,
+        @class
+      ]}
+    &gt;
+      &lt;%= render_slot(@inner_block) %&gt;
+    &lt;/button&gt;
+    &quot;&quot;&quot;</span><span class="w">
+  </span><span class="k" data-group-id="5221230420-3">end</span><span class="w">
+</span><span class="k" data-group-id="5221230420-1">end</span></code></pre><h2 id="data-structures" class="section-heading"><a href="#data-structures" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Data Structures</span></h2><p>Here is a breakdown of the user data structure:</p><table><thead><tr><th style="text-align: left;">Field</th><th style="text-align: left;">Type</th><th style="text-align: left;">Description</th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">id</code></td><td style="text-align: left;"><code class="inline">integer</code></td><td style="text-align: left;">Unique identifier</td></tr><tr><td style="text-align: left;"><code class="inline">email</code></td><td style="text-align: left;"><code class="inline">string</code></td><td style="text-align: left;">User's email address</td></tr><tr><td style="text-align: left;"><code class="inline">inserted_at</code></td><td style="text-align: left;"><code class="inline">datetime</code></td><td style="text-align: left;">Creation timestamp</td></tr></tbody></table><h2 id="important-notes" class="section-heading"><a href="#important-notes" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Important Notes</span></h2><blockquote><p>[!INFO]
+Remember to always validate user input before processing it.</p></blockquote><blockquote><p>[!WARNING]
+This is a warning block. Be careful when handling sensitive data.</p></blockquote><h2 id="mermaid-diagrams" class="section-heading"><a href="#mermaid-diagrams" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Mermaid Diagrams</span></h2><p>ExDoc supports Mermaid diagrams for visualizing flows:</p><pre><code class="mermaid">graph TD;
+  A[User] --&gt;|Request| B(Load Balancer);
+  B --&gt;|Forward| C{Phoenix Node};
+  C --&gt;|Query| D[PostgreSQL];
+  C --&gt;|Cache| E[Redis];</code></pre>
 
 </div>
 
 <div class="bottom-actions" id="bottom-actions">
   <div class="bottom-actions-item">
 
-      <a href="readme.html" class="bottom-actions-button" rel="prev">
+      <a href="introduction.html" class="bottom-actions-button" rel="prev">
         <span class="subheader">
           ← Previous Page
         </span>
         <span class="title">
-ElixirT1
+Introduction
         </span>
       </a>
 
   </div>
   <div class="bottom-actions-item">
-
-      <a href="advanced_features.html" class="bottom-actions-button" rel="next">
-        <span class="subheader">
-          Next Page →
-        </span>
-        <span class="title">
-Advanced Features
-        </span>
-      </a>
 
   </div>
 </div>
