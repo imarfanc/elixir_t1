@@ -21,3 +21,4 @@ To get started with the project, make sure you have Elixir and Erlang installed.
 ## Contributing
 
 We welcome contributions! Please see the `CONTRIBUTING.md` file for more details.
+We welcome contributions! Please see the `CONTRIBUTING.md` file for more details.
